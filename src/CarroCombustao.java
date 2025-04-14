@@ -49,7 +49,13 @@ public class CarroCombustao extends Carro{
     }
 
     public String toString(){
-        return "Matricula: " + this.matricula + "\n" + "Marca: " + this.marca + "\n" + "Modelo: " + this.modelo + "\n" + "Ano: " + this.ano + "\n" + "Velocidade Média: " + this.velocidade_media + "\n" + "Consumo/KM a 100KM/H: " + this.consumo + "\n" + "Autonomia: " + this.autonomia + "\n" + "Km Totais: " + this.kmtotais + "\n" + "Tamanho Depósito: " + this.tamDep + "\n" + "Consumo Litros/100km: " + this.consumoLitros100Km + "\n" + "Preço Litro: " + this.precoLitro + "\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Tamanho Depósito: ").append(this.tamDep).append("\n");
+        sb.append("Consumo Litros/100KM: ").append(this.consumoLitros100Km).append("\n");
+        sb.append("Preço Litro: ").append(this.precoLitro).append("\n");
+
+        return sb.toString();
     }
 
     public boolean equals(Object o){
@@ -58,14 +64,7 @@ public class CarroCombustao extends Carro{
 
         CarroCombustao c = (CarroCombustao) o;
 
-        return  c.getMatricula().equals(this.matricula) &&
-                c.getMarca().equals(this.marca) &&
-                c.getModelo().equals(this.modelo) &&
-                c.getAno() == this.ano &&
-                c.getVelocidadeMedia() == this.velocidade_media &&
-                c.getConsumo() == this.consumo &&
-                c.getAutonomia() == this.autonomia &&
-                c.getKmTotais() == this.kmtotais &&
+        return  super.equals(o)&&
                 c.getTamDep() == this.tamDep &&
                 c.getConsumoLitros() == this.consumoLitros100Km &&
                 c.getPrecoLitro() == this.precoLitro;
@@ -76,7 +75,7 @@ public class CarroCombustao extends Carro{
     }
 
     public double custoPorKm(){
-        double custo = (this.consumoLitros100Km/100) * this.precoLitro;
+        double custo = (this.getConsumoLitros()/100) * this.getPrecoLitro();
         return custo;
     }
 }

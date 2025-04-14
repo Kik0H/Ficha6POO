@@ -108,7 +108,16 @@ public abstract class Carro {
     //PERGUNTAR NA AULA SOBRE O ABSTRACT??
 
     public String toString(){
-        return "Matricula: " + this.matricula + "\n" + "Marca: " + this.marca + "\n" + "Modelo: " + this.modelo + "\n" + "Ano: " + this.ano + "\n" + "Velocidade Média: " + this.velocidade_media + "\n"  + "Consumo/KM a 100KM/H: " + this.consumo + "\n" + "Autonomia: " + this.autonomia + "\n" + "Km Totais: " + this.kmtotais + "\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Matricula: ").append(this.matricula).append("\n");
+        sb.append("Marca: ").append(this.marca).append("\n");
+        sb.append("Modelo: ").append(this.modelo).append("\n");
+        sb.append("Ano: ").append(this.ano).append("\n");
+        sb.append("Velocidade Média: ").append(this.velocidade_media).append("\n");
+        sb.append("Consumo/KM a 100KM/H: ").append(this.consumo).append("\n");
+        sb.append("Autonomia: ").append(this.autonomia).append("\n");
+        sb.append("Km Totais: ").append(this.kmtotais).append("\n");
+        return sb.toString();
     }
 
     public boolean equals(Object o){
