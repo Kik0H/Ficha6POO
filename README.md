@@ -29,7 +29,3 @@ Não confundir o consumo a uma velocidade de 100km/h (Classe carro) com o consum
 12) carrosComAlcance(int kms) -> Devolve o conjunto de carros que conseguem efetuar uma viagem de x kms.
 13) comBateriaDe(int nivelMinimo) -> Devolve o conjunto de carros elétricos cujo nível de bateria é pelo menos uma percentagem.
 
-**Por implementar:**<br />
-• Classe CarRentalList, com os mesmos requisitos da CarRental, mas que utiliza uma estrutura de dados List<Carro> <br />
-• CLasse CarRentalSet, com os mesmo requisitos da CarRental, mas que utiliza uma estrutura de dados TreeSet<Carro> <br />
-
